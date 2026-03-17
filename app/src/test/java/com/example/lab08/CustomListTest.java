@@ -15,9 +15,11 @@ public class CustomListTest {
     public void testDelete() {
         CustomList list = new CustomList();
         City calgary = new City("Calgary", "AB");
-        list.delete(city);
-        assertEquals(0, cityList.countCities());
-        assertFalse(cityList.hasCity(city));
+        list.addCity(calgary);  // <-- IMPORTANT
+
+        list.delete(calgary);
+        assertFalse(list.hasCity(calgary));
+
     }
 
 }
